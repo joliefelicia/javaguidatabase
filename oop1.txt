@@ -1,0 +1,53 @@
+--1. Pertama, buka cmd lalu ketik sqlplus
+Microsoft Windows [Version 10.0.19041.630]
+(c) 2020 Microsoft Corporation. All rights reserved.
+
+C:\Users\admin>sqlplus
+
+SQL*Plus: Release 18.0.0.0.0 - Production on Thu Nov 26 14:48:37 2020
+Version 18.4.0.0.0
+
+Copyright (c) 1982, 2018, Oracle.  All rights reserved.
+
+
+--2. masukkin username dan password 
+Enter user-name: system
+Enter password:
+Last Successful login time: Thu Sep 17 2020 15:31:06 +07:00
+
+Connected to:
+Oracle Database 18c Express Edition Release 18.0.0.0.0 - Production
+Version 18.4.0.0.0
+
+
+
+--3.  menghidupkan session dengan query dibawah ini
+SQL> ALTER SESSION SET "_ORACLE_SCRIPT"=true
+  2
+SQL> ALTER SESSION SET "_ORACLE_SCRIPT"=true;
+
+Session altered.
+
+
+--4. Membuat username baru beserta dengan password 
+SQL>  CREATE USER javagui IDENTIFIED BY javagui;
+
+User created.
+
+
+--5. Memberikan akses ke username varu dengan query dibawah ini 
+SQL> GRANT ALL PRIVILEGES TO javagui;
+
+Grant succeeded.
+
+
+--6. Buka sql developer dan membuat koneksi baru dengan pencet tombol + hijau, kemudian, masukkin nama username dan password yang sama di cmd, kemudian masukkin nama koneksi dengan nama oopgui
+user: javagui
+password:javagui
+
+
+--7. Setelah masukkin nama koneksi, user, dan password kemudian pencet test, jika hasil sukses maka pencet tombol save 
+
+
+--8. membuat tabel dengan queri dibawah ini
+create table employees (id char(4) not null, fullname varchar2(50) not null,gender varchar2(20),position varchar2(20),salary int);
